@@ -39,5 +39,9 @@ public class TicketService implements ITicketService{
 	public int deleteByID(int id) {
 		return repository.deleteByID(id);
 	}
+
+	public String findByID(int id) {
+		return gson.toJson(repository.findByID(id));
+	}
 	
 }

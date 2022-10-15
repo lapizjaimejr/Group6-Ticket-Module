@@ -8,6 +8,8 @@ public class Ticket {
 	private String description;
 	private String tracker;
 	
+	public Ticket() {}
+	
 	public Ticket(
 			final int ticketID,
 			final String assignee,

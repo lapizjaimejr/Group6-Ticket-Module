@@ -19,6 +19,13 @@ public class TicketRepository implements ITicketRepository{
 		return result;
 	}
 	
+	public Ticket findByID(final int id) {
+		final String query = "SELECT * FROM tickets where ticketID=?";
+        final Ticket result = template.queryForObject(query, BeanPropertyRowMapper.newInstance(Ticket.class), id);
+
+        return result;
+	}
+	
 	public int save(Ticket ticket) {
 		final String sql = "INSERT INTO tickets (ticketID, assignee, status, subject, description, tracker) VALUES (?,?,?,?,?,?)";
 		final int result = template.update(sql, ticket.getTicketID(), ticket.getAssignee(), ticket.getSubject(), ticket.getDescription(), ticket.getTracker());
@@ -26,7 +33,6 @@ public class TicketRepository implements ITicketRepository{
 	}
 
 	public int updateByID(Ticket ticket) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
