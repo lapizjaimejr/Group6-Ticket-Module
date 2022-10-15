@@ -22,6 +22,10 @@ public class TicketService implements ITicketService{
 		this.gson = new Gson();
 	}
 	
+	public String getAll() {
+		return gson.toJson(repository.getAll());
+	}
+	
 	public int save(BufferedReader body) {
 		final Ticket ticket = gson.fromJson(body, Ticket.class);
 		
