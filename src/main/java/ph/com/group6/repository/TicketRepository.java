@@ -11,8 +11,9 @@ public class TicketRepository implements ITicketRepository{
 	private JdbcTemplate template;
 	
 	public int save(Ticket ticket) {
-		// TODO Auto-generated method stub
-		return 0;
+		final String sql = "INSERT INTO tickets (ticketID, assignee, status, subject, description, tracker) VALUES (?,?,?,?,?,?)";
+		final int result = template.update(sql, ticket.getTicketID(), ticket.getAssignee(), ticket.getSubject(), ticket.getDescription(), ticket.getTracker());
+		return result;
 	}
 
 	public int updateByID(Ticket ticket) {
