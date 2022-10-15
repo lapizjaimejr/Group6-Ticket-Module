@@ -33,13 +33,11 @@ public class TicketService implements ITicketService{
 	}
 
 	public int update(Ticket ticket) {
-		// TODO Auto-generated method stub
-		return 0;
+		return repository.updateByID(ticket);
 	}
 
 	public int deleteByID(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return repository.deleteByID(id);
 	}
 	
 }

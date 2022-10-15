@@ -31,8 +31,10 @@ public class TicketRepository implements ITicketRepository{
 	}
 
 	public int deleteByID(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		final String sql = "DELETE FROM tickets WHERE ticketID=?";
+		final int result = template.update(sql, id);
+		
+		return result;
 	}
 	
 }
