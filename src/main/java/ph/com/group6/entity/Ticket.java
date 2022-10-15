@@ -16,12 +16,12 @@ public class Ticket {
 			final String description,
 			final String tracker
 	) {
-		this.setTicketID(ticketID);
-		this.setAssignee(assignee);
-		this.setStatus(status);
-		this.setSubject(subject);
-		this.setDescription(description);
-		this.setTracker(tracker);
+		this.ticketID = ticketID;
+		this.assignee = assignee;
+		this.status = status;
+		this.subject = subject;
+		this.description = description;
+		this.tracker = tracker;
 	}
 
 	public int getTicketID() {

@@ -15,7 +15,7 @@ public class TicketController {
 		this.service = service;
 	}
 	
-	@RequestMapping("/tickets/all")
+	@RequestMapping("/tickets")
 	public String getAll() {
 		return service.getAll();
 	}
