@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
+import ph.com.group6.entity.Ticket;
 import ph.com.group6.repository.ITicketRepository;
 
 @Service
@@ -21,19 +22,26 @@ public class TicketService implements ITicketService{
 		this.gson = new Gson();
 	}
 	
+	public String getAll() {
+		return gson.toJson(repository.getAll());
+	}
+	
 	public int save(BufferedReader body) {
-		// TODO Auto-generated method stub
-		return 0;
+		final Ticket ticket = gson.fromJson(body, Ticket.class);
+		
+		return repository.save(ticket);
 	}
 
 	public int update(Ticket ticket) {
-		// TODO Auto-generated method stub
-		return 0;
+		return repository.updateByID(ticket);
 	}
 
 	public int deleteByID(int id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return repository.deleteByID(id);
+	}
+
+	public String findByID(final int id) {
+		return gson.toJson(repository.findByID(id));
 	}
 	
 }
