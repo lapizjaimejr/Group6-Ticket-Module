@@ -1,8 +1,8 @@
-package ph.com.group6.service;
+package ph.com.group6.ticketModule.service;
 
 import java.io.BufferedReader;
 
-import ph.com.group6.entity.Ticket;
+import ph.com.group6.ticketModule.entity.Ticket;
 
 public interface ITicketService {
 	public String getAll();

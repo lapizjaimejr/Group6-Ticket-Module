@@ -1,4 +1,4 @@
-package ph.com.group6.service;
+package ph.com.group6.ticketModule.service;
 
 import java.io.BufferedReader;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
-import ph.com.group6.entity.Ticket;
-import ph.com.group6.repository.ITicketRepository;
+import ph.com.group6.ticketModule.entity.Ticket;
+import ph.com.group6.ticketModule.repository.ITicketRepository;
 
 @Service
 public class TicketService implements ITicketService{

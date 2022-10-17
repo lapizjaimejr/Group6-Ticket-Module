@@ -1,4 +1,4 @@
-package ph.com.group6.controller;
+package ph.com.group6.ticketModule.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ph.com.group6.service.ITicketService;
+import ph.com.group6.ticketModule.service.ITicketService;
 
 public class TicketController {
 	private ITicketService service;

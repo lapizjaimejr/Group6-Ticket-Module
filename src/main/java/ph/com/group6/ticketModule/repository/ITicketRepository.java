@@ -1,8 +1,8 @@
-package ph.com.group6.repository;
+package ph.com.group6.ticketModule.repository;
 
 import java.util.List;
 
-import ph.com.group6.entity.Ticket;
+import ph.com.group6.ticketModule.entity.Ticket;
 
 public interface ITicketRepository {
 	public List<Ticket> getAll(); 
