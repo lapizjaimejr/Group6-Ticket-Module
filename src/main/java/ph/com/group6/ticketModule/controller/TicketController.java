@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import ph.com.group6.ticketModule.service.ITicketService;
 
+@RestController
 public class TicketController {
 	private ITicketService service;
 	
@@ -23,7 +25,6 @@ public class TicketController {
 	}
 	
 	@PostMapping("/tickets")
-	@ResponseBody
     public int save(final HttpServletRequest request) throws IOException
     {
         final BufferedReader body = request.getReader();
@@ -31,20 +32,17 @@ public class TicketController {
     }
 	
 	@RequestMapping("/tickets/{id}")
-	@ResponseBody
     public String execute(@PathVariable final int id)
     {
         return service.findByID(id);
     }
 	
 	@RequestMapping("/tickets")
-	@ResponseBody
 	public String getAll() {
 		return service.getAll();
 	}
 	
 	@DeleteMapping("/tickets/delete/{id}")
-	@ResponseBody
 	public int delete(@PathVariable final int id) throws IOException
 	{		
 		return service.deleteByID(id);
