@@ -34,7 +34,7 @@ public class TicketController {
     }
 	
 	@RequestMapping("/tickets/{id}")
-    public String execute(@PathVariable final int id)
+    public String getTicket(@PathVariable final int id)
     {
         return service.findByID(id);
     }
@@ -50,16 +50,22 @@ public class TicketController {
 		return service.deleteByID(id);
 	}
 	
+	@PostMapping("/tickets/update/{id}")
+	public int updateTicket(@PathVariable final int id, @RequestParam("assignee") final String assignee, @RequestParam("status") final String status, @RequestParam("subject") final String subject, @RequestParam("description") final String description, @RequestParam("tracker") final String tracker) throws IOException {
+		return service.update(new Ticket(id, assignee, status, subject, description, tracker));
+	}
+	
 	@PostMapping("/tickets/updateAss/{id}")
 	public int updateAss(@PathVariable final int id, @RequestParam("assignee") final String assignee) throws IOException {
-		return service.updateAss(new Ticket(id, assignee));
+		return service.updateAss(id, assignee);
 	}
 	
 	
 	@PostMapping("/tickets/updateStat/{id}")
 	public int updateStat(@PathVariable final int id, @RequestParam("status") final String status) throws IOException {
-		return service.updateStat(new Ticket(id, status));
+		return service.updateStat(id, status);
 	}
 	
 	
 }
+

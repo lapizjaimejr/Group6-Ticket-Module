@@ -11,6 +11,6 @@ public interface ITicketService {
 	public int update(final Ticket ticket);
 	public int deleteByID(final int id);
 	public int updateAss(final int id, final String assignee);
-	public int updateStat(final int id, final String updateStat);
+	public int updateStat(final int id, final String status);
 }
 

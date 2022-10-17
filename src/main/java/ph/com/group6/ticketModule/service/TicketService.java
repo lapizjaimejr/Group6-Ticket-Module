@@ -44,16 +44,14 @@ public class TicketService implements ITicketService{
 		return gson.toJson(repository.findByID(id));
 	}
 
-	@Override
-	public int updateAss(int id, String assignee) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	public int updateAss(final int id, final String assignee) {
+		return repository.updateAss(id, assignee);
 	}
 
-	@Override
-	public int updateStat(int id, String updateStat) {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	public int updateStat(final int id, final String status) {
+		return repository.updateStat(id, status);
 	}
 	
 }
