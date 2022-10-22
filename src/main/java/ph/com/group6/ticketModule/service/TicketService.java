@@ -26,8 +26,8 @@ public class TicketService implements ITicketService{
 		return gson.toJson(repository.getAll());
 	}
 	
-	public int save(BufferedReader body) {
-		final Ticket ticket = gson.fromJson(body, Ticket.class);
+	public int save(final Ticket ticket) {
+//		final Ticket ticket = gson.fromJson(body, Ticket.class);
 		
 		return repository.save(ticket);
 	}

@@ -27,10 +27,10 @@ public class TicketController {
 	}
 	
 	@PostMapping("/tickets/save")
-    public int save(final HttpServletRequest request) throws IOException
+    public int save(@RequestParam("ticketID") final int ticketID, @RequestParam("assignee") final String assignee, @RequestParam("status") final String status, @RequestParam("subject") final String subject, @RequestParam("description") final String description, @RequestParam("tracker") final String tracker) throws IOException
     {
-        final BufferedReader body = request.getReader();
-        return service.save(body);
+//        final BufferedReader body = request.getReader();
+        return service.save(new Ticket(ticketID, assignee, status, subject, description, tracker));
     }
 	
 	@RequestMapping("/tickets/{id}")
